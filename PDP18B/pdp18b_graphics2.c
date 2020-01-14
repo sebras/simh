@@ -23,13 +23,13 @@
    used in advertising or otherwise to promote the sale, use or other dealings
    in this Software without prior written authorization from Lars Brinkhoff.
 
-   graphics2	(PDP-7, PDP-9) GRAPHICS-2 display.
+   graphic2	(PDP-7, PDP-9) Graphic-II display.
 */
 
 
 #include "pdp18b_defs.h"
 
-#if defined(GRAPHICS2)
+#if defined(GRAPHIC2)
 #include "display/graphics2.h"
 #include "display/display.h"
 #include "sim_video.h"
@@ -87,7 +87,7 @@ DEBTAB graphics2_deb[] = {
     };
 
 DEVICE graphics2_dev = {
-    "GRAPHICS2", graphics2_unit, NULL, NULL,
+    "GRAPHIC2", graphics2_unit, NULL, NULL,
     1, 8, 24, 1, 8, 18,
     NULL, NULL, &graphics2_reset,
     NULL, NULL, NULL,
@@ -96,7 +96,7 @@ DEVICE graphics2_dev = {
     };
 
 DEVICE graphics2b_dev = {
-    "GRAPHICS2B", NULL, NULL, NULL,
+    "GRAPHIC2B", NULL, NULL, NULL,
     0, 8, 24, 1, 8, 18,
     NULL, NULL, &graphics2_reset,
     NULL, NULL, NULL,
@@ -105,7 +105,7 @@ DEVICE graphics2b_dev = {
     };
 
 DEVICE graphics2c_dev = {
-    "GRAPHICS2C", NULL, NULL, NULL,
+    "GRAPHIC2C", NULL, NULL, NULL,
     0, 8, 24, 1, 8, 18,
     NULL, NULL, &graphics2_reset,
     NULL, NULL, NULL,
@@ -114,7 +114,7 @@ DEVICE graphics2c_dev = {
     };
 
 DEVICE graphics2d_dev = {
-    "GRAPHICS2D", NULL, NULL, NULL,
+    "GRAPHIC2D", NULL, NULL, NULL,
     0, 8, 24, 1, 8, 18,
     NULL, NULL, &graphics2_reset,
     NULL, NULL, NULL,
@@ -665,4 +665,4 @@ static int32 iot45 (int32 dev, int32 pulse, int32 dat)
   return dat;
 }
 
-#endif /* GRAPHICS2 */
+#endif /* GRAPHIC2 */

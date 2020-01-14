@@ -184,7 +184,7 @@ gr2_reset(void *dptr)
     DEBUGF(("GRAPHICS-2: reset\r\n"));
 #ifndef G2_NODISPLAY
     if (!u->initialized) {
-        display_init(DIS_GRAPHICS2, 1, dptr); /* XXX check return? */
+        display_init(DIS_GRAPHIC2, 1, dptr); /* XXX check return? */
         u->initialized = 1;
     }
 #endif

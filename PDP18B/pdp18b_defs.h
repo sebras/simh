@@ -148,7 +148,7 @@
 #define TYPE550         0                               /* DECtape */
 #define DRM             0                               /* drum */
 #define RB              0                               /* fixed head disk */
-#define GRAPHICS2       0                               /* BTL display */
+#define GRAPHIC2        0                               /* BTL display */
 #ifdef USE_DISPLAY
 #define TYPE340         0                               /* Type 340 display */
 #endif
@@ -162,7 +162,7 @@
 #define MTA             0                               /* magtape */
 #define TC02            0                               /* DECtape */
 #define TTY1            4                               /* second Teletype(s) */
-#define GRAPHICS2       0                               /* BTL display */
+#define GRAPHIC2        0                               /* BTL display */
 #define BRMASK          0076000                         /* bounds mask */
 #elif defined (PDP15)
 #define ADDRSIZE        17
@@ -300,7 +300,7 @@ typedef struct {
 #define DEV_MT          073                             /* magtape */
 #define DEV_DTA         075                             /* dectape */
 
-#ifdef GRAPHICS2
+#ifdef GRAPHIC2
 /* Bell Telephone Labs GRAPHICS-2 Display System ("as large as the PDP-7")
  * Used by PDP-7 UNIX as a "Glass TTY"
  */
@@ -479,7 +479,7 @@ typedef struct {
 #define API_TTO         4
 #define API_PTP         4
 
-#ifdef GRAPHICS2
+#ifdef GRAPHIC2
 /*
  * A PDP-9 version existed,
  * but we're only interested simulating a PDP-7 without API

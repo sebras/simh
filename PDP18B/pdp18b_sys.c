@@ -99,13 +99,13 @@ extern DEVICE mt_dev;
 extern DEVICE tti1_dev, tto1_dev;
 extern UNIT tti1_unit, tto1_unit;
 #endif
-#if defined (GRAPHICS2)
+#if defined (GRAPHIC2)
 extern DEVICE g2out_dev, g2in_dev;
 #endif
 #if defined (UC15)
 extern DEVICE dr15_dev;
 #endif
-#if defined (GRAPHICS2)
+#if defined (GRAPHIC2)
 extern DEVICE g2out_dev, g2in_dev;
 extern DEVICE graphics2_dev;
 extern DEVICE graphics2b_dev;
@@ -189,7 +189,7 @@ DEVICE *sim_devices[] = {
 #if defined (UC15)
     &dr15_dev,
 #endif
-#if defined (GRAPHICS2)
+#if defined (GRAPHIC2)
     &g2out_dev, &g2in_dev,
     &graphics2_dev,
     &graphics2b_dev,

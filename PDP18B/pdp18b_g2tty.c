@@ -112,7 +112,7 @@
  */
 
 #include "pdp18b_defs.h"
-#ifdef GRAPHICS2
+#ifdef GRAPHIC2
 #include "sim_tmxr.h"
 
 int debug = 0;

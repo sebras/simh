@@ -119,6 +119,13 @@ static struct phosphor p7[] = {
 };
 static struct color color_p7 = { p7, ELEMENTS(p7), 125000 };
 
+/* Unknown Graphic-II phosphor.  Ken Thompson states there was no slow
+   components.  Supposedly a 30 Hz refresh rate is flicker free. */
+static struct phosphor g2[] = {
+    {1.0, 1.0, 1.0,  0.9, 0.033},  /* fast */
+};
+static struct color color_g2 = { g2, ELEMENTS(g2), 25000 };
+
 /* green phosphor for VR14, VR17, VR20 */
 static struct phosphor p29[] = {{0.0260, 1.0, 0.00121, 0.5, 0.025}};
 struct color color_p29 = { p29, ELEMENTS(p29), 25000 };
@@ -248,7 +255,7 @@ static struct display displays[] = {
      * on PDP-7/9
      *
      */
-    { DIS_GRAPHICS2, "GRAPHICS-2", &color_p7, NULL, 1024, 1024 },
+    { DIS_GRAPHIC2, "Graphic-II", &color_g2, NULL, 1024, 1024 },
 };
 
 /*
