@@ -1,3 +1,9 @@
+set g2in disabled
+set ttix disabled
+set graphic2 enabled
+set graphic2b enabled
+set graphic2c enabled
+set graphic2d enabled
 deposit 000000 740040 
 deposit 000001 603452 
 deposit 000020 740040 
@@ -2622,3 +2628,4 @@ deposit 006120 000000
 deposit 006121 000000
 deposit 006122 000000
 deposit 006123 000000
+deposit pc 600
