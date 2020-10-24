@@ -100,6 +100,7 @@ static struct graphics2 {
     unsigned char intensity;    /* 2 bits */
     unsigned char blink;        /* 1 bit */
     unsigned char blink_on;     /* 1 bit */
+    g2word chartbl;
 } u340[G2_UNITS];
 
 #if G2_UNITS == 1
@@ -159,6 +160,14 @@ g2_sense(g2word flags)
     struct graphics2 *u = UNIT(0);
     DEBUGF(("GRAPHICS-2: sense %06o from %06o\r\n", flags, u->status));
     return u->status & flags;
+}
+
+void
+g2_set_char_table(g2word chartbl)
+{
+    struct graphics2 *u = UNIT(0);
+    u->chartbl = chartbl & 07777;
+    DEBUGF(("GRAPHICS-2: set char table %06o\r\n", u->chartbl));
 }
 
 void
@@ -573,13 +582,12 @@ ipoint(int byte)
     return 0;
 }
 
-#include "g2chars.c"
 
 static void
 g2char (int c)
 {
   g2word x;
-  int i, j, n;
+  int i, j, d, n;
   struct graphics2 *u = UNIT(0);
 
   if (c == 010) {
@@ -605,11 +613,12 @@ g2char (int c)
     return;
   }
 
-  n = (chargen[c-040][0] >> 10) & 077;
-  DEBUGF(("G-2 character '%c', %d bytes\r\n", c, n));
-  for (i = 0, j = 1; i < n; i++) {
+  d = g2_fetch(u->chartbl + c);
+  n = (d >> 10) & 077;
+  DEBUGF(("G-2 character '%c', %d bytes chartbl=%d\r\n", c, n, u->chartbl));
+  for (i = 0, j = 0; i < n; i++) {
     if ((i % 3) == 0)
-      x = chargen[c-040][j++];
+      x = g2_fetch(u->chartbl + (d & 01777) + j++);
     ipoint ((x >> 12) & 077);
     x <<= 6;
   }

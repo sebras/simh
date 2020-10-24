@@ -66,6 +66,7 @@ g2word g2_sense(g2word);
 g2word g2_get_flags(void);
 void g2_cycle(int);
 void g2_clear_flags(g2word);
+void g2_set_char_table(g2word);
 void g2_set_address(g2word addr);
 void g2_set_flags(g2word);
 void g2_set_lp(g2word);
